@@ -5,3 +5,128 @@ this can be used for the FAQ-accordion. read more here: https://www.w3schools.co
 .active + .answer {
   /* some styling here */
 }
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #f2f3f4;
+}
+
+.header-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg-video {
+  position: absolute;
+  object-fit: cover;
+  min-width: 100%;
+  max-width: 100%;
+  z-index: 0;
+  min-height: 100%;
+  max-height: 100%;
+  top:0;
+}
+
+.btn{
+   position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.btn-anime{
+  color: white;
+  padding: 20px;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  animation: colorshift 5s ease infinite;
+}
+
+@keyframes colorshift {
+0% {
+  background-color: red;
+}
+20% {
+  background-color: green;
+}
+40% {
+  background-color: yellow;
+}
+60% {
+  background-color: blue;
+}
+80% {
+  background-color: pink;
+}
+100% {
+  background-color: khaki;
+}
+}
+  
+/* Header coding fisnish here */
+
+
+
+.grid-wrapper{
+  display: grid;
+  grid-template-columns: minmax(100% 1fr);
+  justify-content: center;
+  grid-gap: 2rem;
+  position: relative;
+ 
+}
+
+.grid-flex {
+  display: flex;
+  background-color: #469e8a;
+  padding: 20px;
+  border-radius: 20px;
+  justify-content: center;
+  color:cornsilk;
+  font-size: 20px;
+}
+
+.faq{
+  cursor: pointer;
+  border-bottom: 1px solid cornsilk;
+  margin-bottom: 1rem;
+} 
+
+ .answer{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.4s ease;
+}
+
+.active.answer{
+  max-height: 300px;
+}
+
+.faq.active img{
+  rotate: (180deg);
+} 
+
+
+
+@media screen and (min-width:500px) {
+  .grid-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 60px;
+  }
+  .grid-flex{
+    margin: 40px;
+    font-size: 30px;
+    justify-content: center;
+  }
+
+} 
+
